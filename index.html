@@ -1,25 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Project Files</title>
-    <style>
-        body { font-family: sans-serif; padding: 40px; background: #f0f2f5; }
-        h1 { color: #333; border-bottom: 2px solid #ccc; padding-bottom: 10px; }
-        li { margin: 15px 0; background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); list-style: none;}
-        a { text-decoration: none; color: #0066cc; font-weight: bold; font-size: 20px; }
-        a:hover { color: #003366; }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>SaintStream: Document Library</title>
+<style>
+  :root {
+    color-scheme: light;
+    --text: #16202E; --muted: #5B6775; --gold: #B07D14; --blue: #0A5BD0; --lavender: #7B4FD0;
+    --line: rgba(20, 28, 42, 0.12);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; line-height: 1.6;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    color: var(--text);
+    background: linear-gradient(180deg, #0B0C11 0%, #0A0B0F 50%, #08090C 100%);
+    background-attachment: fixed;
+  }
+  body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.016) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent 78%);
+  }
+  .page { width: min(760px, calc(100% - 32px)); margin: 0 auto; padding: 56px 0 72px; position: relative; z-index: 1; }
+  .head { text-align: center; margin-bottom: 30px; }
+  .wordmark {
+    font-size: clamp(2rem, 6vw, 3rem); font-weight: 800; letter-spacing: -0.04em; margin: 0;
+    background: linear-gradient(90deg, var(--gold), var(--blue), var(--lavender));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .tag { color: var(--gold); font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700; margin-top: 8px; }
+  .lede { color: #AEB7C7; max-width: 520px; margin: 16px auto 0; font-size: 1rem; }
+  .card {
+    display: block; text-decoration: none; color: inherit;
+    background: #F7F9FC; border: 1px solid var(--line); border-radius: 18px;
+    padding: 20px 22px; margin-top: 14px;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.24);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 20px 50px rgba(0,0,0,0.32); border-color: rgba(217,164,65,0.5); }
+  .card .row { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .card h2 { margin: 0; font-size: 1.18rem; letter-spacing: -0.02em; }
+  .card .badge { font-size: 0.64rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; background: linear-gradient(135deg, #3CB869, #2D9A58); padding: 3px 8px; border-radius: 999px; }
+  .card p { margin: 8px 0 0; color: var(--muted); font-size: 0.95rem; }
+  .card .go { margin-top: 10px; color: var(--blue); font-weight: 700; font-size: 0.9rem; }
+  .footer { margin-top: 32px; text-align: center; color: #8893A5; font-size: 0.82rem; line-height: 1.55; }
+  .footer a { color: #9CC2FF; }
+</style>
 </head>
 <body>
+<div class="page">
 
-    <h1>📁 My Project Folder</h1>
-    <p>Click a file below to open it:</p>
-    
-    <ul>
-        <li><a href="saintstream-founding-declaration light.html">📊 Open First File</a></li>
-        <li><a href="preview (2).html">📊 Open Second File</a></li>
-        <li><a href="investor.html">📊 Open Third File</a></li>
-    </ul>
+  <div class="head">
+    <h1 class="wordmark">SaintStream</h1>
+    <div class="tag">Listen · Watch · Read · Aspire</div>
+    <p class="lede">A home for faith-aligned music, story, and media. The briefing documents below share the mission, the model, and the invitation.</p>
+  </div>
 
+  <a class="card" href="saintstream-founding-declaration light.html">
+    <div class="row"><h2>Founding Declaration</h2></div>
+    <p>Why SaintStream exists: the need, the mission, and the call to build something better for the worldwide family of Saints.</p>
+    <div class="go">Read &rarr;</div>
+  </a>
+
+  <a class="card" href="saintstream-creator-call.html">
+    <div class="row"><h2>A Call to the Creators</h2> <span class="badge">New</span></div>
+    <p>An invitation to faith-aligned creators, with the streaming compensation model, a live payout calculator, and the global-equity vision.</p>
+    <div class="go">Read &rarr;</div>
+  </a>
+
+  <a class="card" href="saintstream-content-standards.html">
+    <div class="row"><h2>Content Standards</h2> <span class="badge">New</span></div>
+    <p>The standard every creator accepts before publishing: nothing offensive to the Spirit, screened by AI then a human review board.</p>
+    <div class="go">Read &rarr;</div>
+  </a>
+
+  <a class="card" href="investor.html">
+    <div class="row"><h2>Investor Overview</h2></div>
+    <p>The opportunity, the business model, and the case for a values-aligned, ad-free media platform.</p>
+    <div class="go">Read &rarr;</div>
+  </a>
+
+  <a class="card" href="preview (2).html">
+    <div class="row"><h2>LDSPMA Proposal</h2></div>
+    <p>A partnership proposal for the Latter-day Saint Publishing &amp; Media Association.</p>
+    <div class="go">Read &rarr;</div>
+  </a>
+
+  <div class="footer">
+    <p>SaintStream is an independent nonprofit (formation in process). It is not affiliated with, sponsored by, or endorsed by The Church of Jesus Christ of Latter-day Saints.</p>
+    <p>Questions? <a href="mailto:creators@saintstream.app">creators@saintstream.app</a></p>
+  </div>
+
+</div>
 </body>
 </html>
